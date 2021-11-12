@@ -1,0 +1,36 @@
+.me {
+    margin: 2%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    justify-content: center;
+    background-color: $third-clr;
+    border-radius: 10px;
+    background: $second-clr;
+    color: $bg-clr;
+}
+
+.me img {
+    border-radius: 5px;
+    max-height: 400px;
+}
+
+.me .info {
+    max-width: 60%;
+}
+
+//Media queries 
+@media (max-width: $breakpoint-tablet) {
+    .me {
+        flex-direction: column;
+        padding: 1%;
+    }
+    .me .info {
+        max-width: 90%;
+        margin: 2%;
+    }
+    .me img {
+        max-height: 200px;
+    }
+}

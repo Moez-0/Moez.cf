@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-clr: #f7ece1;
+    --bg2-clr: #f7e1f4;
+    --main-clr: #242038;
+    --gray-clr: #cac4ce;
+    --second-clr: #9067c6;
+    --third-clr: #8d86c9;
+    --pink-clr: #E36397;
+    --eggplant-clr: #472836;
+}
+
+body.theme {
+    transition: 1s ease;
+    --bg-clr: #f6d8ae;
+    --bg2-clr: #f4d35e;
+    --main-clr: #242038;
+    --gray-clr: #531180;
+    --second-clr: #083d77;
+    --third-clr: #89c528;
+    --pink-clr: #86bedf;
+    --eggplant-clr: #ce3077;
+}
+
+$bg-clr: var(--bg-clr);
+$bg2-clr: var(--bg2-clr);
+$main-clr: var(--main-clr);
+$gray-clr: var(--gray-clr);
+$second-clr: var(--second-clr);
+$third-clr: var(--third-clr);
+$pink-clr: var(--pink-clr);
+$eggplant-clr: var(--eggplant-clr);
+//Typography
+$font_size:21px;
+//second theme
+//breakpoints
+$breakpoint-tablet: 768px;
+// resets
+a {
+    text-decoration: none;
+    color: $main-clr;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+//styles
+body {
+    transition: 1s ease;
+    font-family: Cairo;
+    background-color: $bg-clr;
+    color: $main-clr;
+}
+
+.main {
+    padding: 4%;
+    margin: 0 auto;
+}
+
+//components
+@import "./components/navbar";
+@import "./components/about";
+@import "./components/skills";
+@import "./components/intro";
