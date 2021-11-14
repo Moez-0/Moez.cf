@@ -2,7 +2,7 @@
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
 const navClose = document.getElementById("nav-close");
-
+const navlinks = document.getElementsByClassName("nav-link");
 if (navMenu) {
     navToggle.addEventListener("click", () => {
         navMenu.classList.add("show_nav")
@@ -15,6 +15,15 @@ if (navClose) {
         navClose.classList.remove("close");
     })
 }
+if (navlinks) {
+    for (var i = 0; i < navlinks.length; i++) {
+        navlinks[i].addEventListener("click", () => {
+            navMenu.classList.remove("show_nav")
+            navClose.classList.remove("close");
+        })
+    }
+}
+
 //Typing
 
 
