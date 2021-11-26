@@ -4,6 +4,7 @@
         display: flex;
         border-radius: 10px;
         padding: 2%;
+        background-color: $pink-clr;
     }
     
     .info-contact {
@@ -13,11 +14,10 @@
         justify-content: center;
         flex-direction: column;
         color: $bg-clr;
-        background-color: $second-clr;
         width: 100%;
     }
     
-    .contact .info-contact li {
+    .info-contact li {
         i {
             margin: 5px;
         }
@@ -75,10 +75,13 @@
     @media (min-width: $breakpoint-tablet) {
         .contact {
             flex-direction: row;
+            position: relative;
+            height: 800px;
+            padding: 2%;
         }
-        .contact .info-contact {
+        .info-contact {
             flex: 0.2;
-            width: 20%;
+            top: 10px;
         }
         form {
             flex: 1;

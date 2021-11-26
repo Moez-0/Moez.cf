@@ -460,6 +460,7 @@ body {
   display: flex;
   border-radius: 10px;
   padding: 2%;
+  background-color: var(--pink-clr);
 }
 
 .info-contact {
@@ -478,18 +479,17 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: var(--bg-clr);
-  background-color: var(--second-clr);
   width: 100%;
 }
 
-.contact .info-contact li {
+.info-contact li {
   width: 100%;
   margin: 15px;
   color: var(--second-clr);
   background-color: var(--bg-clr);
 }
 
-.contact .info-contact li i {
+.info-contact li i {
   margin: 5px;
 }
 
@@ -566,12 +566,15 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    position: relative;
+    height: 800px;
+    padding: 2%;
   }
-  .contact .info-contact {
+  .info-contact {
     -webkit-box-flex: 0.2;
         -ms-flex: 0.2;
             flex: 0.2;
-    width: 20%;
+    top: 10px;
   }
   form {
     -webkit-box-flex: 1;
