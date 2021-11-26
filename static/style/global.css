@@ -461,7 +461,7 @@ body {
   border-radius: 10px;
   padding: 2%;
   color: var(--main-clr);
-  background-color: var(--pink-clr);
+  background-color: var(--second-clr);
 }
 
 .info-contact {
@@ -505,7 +505,6 @@ body {
   display: -ms-grid;
   display: grid;
   gap: 1rem;
-  background-color: var(--pink-clr);
 }
 
 .contact input {
