@@ -165,6 +165,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -10%;
 }
 
 .social {
@@ -216,11 +220,11 @@ body {
   font-size: 12px;
   letter-spacing: 2px;
   color: var(--second-clr);
-  border: 2px solid var(--second-clr);
   padding: 6px;
 }
 
 .intro a:hover {
+  color: var(--bg-clr);
   background-color: var(--pink-clr);
 }
 
@@ -443,5 +447,118 @@ body {
   .me img {
     max-height: 200px;
   }
+}
+
+.contact {
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.info-contact {
+  font-size: 20px;
+  min-height: 400px;
+  max-height: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: var(--bg-clr);
+  background-color: var(--second-clr);
+  width: 100%;
+}
+
+.contact .info-contact li {
+  width: 100%;
+  margin: 15px;
+  color: var(--second-clr);
+  background-color: var(--bg-clr);
+}
+
+.contact .info-contact li i {
+  margin: 5px;
+}
+
+.contact h1 {
+  color: var(--bg-clr);
+  text-align: center;
+}
+
+.contact form {
+  margin-top: 2%;
+  padding: 2%;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  background-color: var(--second-clr);
+}
+
+.contact input {
+  color: black;
+  font-size: 20px;
+  padding: 15px;
+  color: var(--second-clr);
+  border: 0;
+}
+
+.contact textarea {
+  color: var(--second-clr);
+  font-size: 20px;
+  padding: 15px;
+  border: 0;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--second-clr);
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--second-clr);
+  opacity: 1;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--second-clr);
+  opacity: 1;
+  /* Firefox */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--second-clr);
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--second-clr);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--second-clr);
 }
 /*# sourceMappingURL=global.css.map */
