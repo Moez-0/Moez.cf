@@ -464,8 +464,6 @@ body {
 
 .info-contact {
   font-size: 20px;
-  min-height: 400px;
-  max-height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -506,7 +504,7 @@ body {
   display: -ms-grid;
   display: grid;
   gap: 1rem;
-  background-color: var(--second-clr);
+  background-color: var(--pink-clr);
 }
 
 .contact input {
@@ -560,5 +558,25 @@ body {
 ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: var(--second-clr);
+}
+
+@media (min-width: 768px) {
+  .contact {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .contact .info-contact {
+    -webkit-box-flex: 0.2;
+        -ms-flex: 0.2;
+            flex: 0.2;
+    width: 20%;
+  }
+  form {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 /*# sourceMappingURL=global.css.map */
