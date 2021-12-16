@@ -7,30 +7,39 @@ if (navMenu) {
     navToggle.addEventListener("click", () => {
         navMenu.classList.add("show_nav")
         navClose.classList.add("close");
+        navToggle.style.display = "none";
+        navClose.style.display = "block";
     })
 }
 if (navClose) {
     navClose.addEventListener("click", () => {
         navMenu.classList.remove("show_nav")
         navClose.classList.remove("close");
+        navClose.style.display = "none";
+        navToggle.style.display = "block";
     })
+
 }
 if (navlinks) {
     for (var i = 0; i < navlinks.length; i++) {
         navlinks[i].addEventListener("click", () => {
             navMenu.classList.remove("show_nav")
             navClose.classList.remove("close");
+            navClose.style.display = "none";
+            navToggle.style.display = "block";
         })
     }
 }
 
-//Typing
+
+
+//light mode
 
 
 // check for saved 'darkMode' in localStorage
 let darkMode = localStorage.getItem('darkMode');
 
-const darkModeToggle = document.querySelector('#toggle-theme');
+const darkModeToggle = document.querySelector('#toggle-light');
 
 const enableDarkMode = () => {
     // 1. Add the class to the body
