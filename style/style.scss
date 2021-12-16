@@ -211,6 +211,7 @@ li {
 
 //email
 .socials .email {
+    z-index: 999;
     position: fixed;
     display: flex;
     flex-direction: column;

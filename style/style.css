@@ -229,6 +229,7 @@ li {
 }
 
 .socials .email {
+  z-index: 999;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
