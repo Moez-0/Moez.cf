@@ -12,6 +12,8 @@ a {
 }
 
 :root {
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
   --bg-clr: #050718;
   --main-clr: #FF2079;
   --font-clr: white;
