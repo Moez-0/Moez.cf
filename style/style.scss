@@ -20,7 +20,7 @@ a {
 }
 
 body.theme {
-    transition: 1s ease;
+    transition: 1s ease-in-out;
     --bg-clr: white;
     --main-clr: #4223e0;
     --font-clr: rgb(5, 7, 24);
