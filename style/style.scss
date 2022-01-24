@@ -418,6 +418,10 @@ li {
 
 .countdown {
     font-size: 2rem;
+    img {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 @media (min-width:900px) {
@@ -442,10 +446,6 @@ li {
     }
     .countdown {
         font-size: 3rem;
-        img {
-            height: 200px;
-            width: 200px;
-        }
     }
 }
 

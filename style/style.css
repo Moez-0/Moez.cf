@@ -515,6 +515,11 @@ li {
   font-size: 2rem;
 }
 
+.countdown img {
+  height: 200px;
+  width: 200px;
+}
+
 @media (min-width: 900px) {
   .about {
     position: relative;
@@ -537,10 +542,6 @@ li {
   }
   .countdown {
     font-size: 3rem;
-  }
-  .countdown img {
-    height: 200px;
-    width: 200px;
   }
 }
 
