@@ -548,7 +548,7 @@ li {
 
 .timer {
   font: 72px Courier;
-  color: #fff;
+  color: var(--font-clr);
   text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
