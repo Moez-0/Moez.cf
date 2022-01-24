@@ -538,6 +538,10 @@ li {
   .countdown {
     font-size: 3rem;
   }
+  .countdown img {
+    height: 200px;
+    width: 200px;
+  }
 }
 
 .countdown {
