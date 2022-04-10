@@ -1,0 +1,44 @@
+.s4 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.s4 {
+    padding: 0 10%;
+    h1 {
+        color: $bg-clr;
+    }
+    button {
+        color: $bg-clr;
+        background-color: transparent;
+        border: 2px solid $main-clr;
+        margin: 15px 0;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1.5rem;
+        width: 200px;
+        font-family: "M PLUS 1p", sans-serif;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background: $bg-clr;
+            color: $main-clr;
+        }
+    }
+}
+
+//add media query for mobile
+@media screen and (max-width: 768px) {
+    .s4 {
+        padding: 0 15%;
+        h1 {
+            font-size: 1.5rem;
+        }
+        button {
+            font-size: 1rem;
+        }
+    }
+}
