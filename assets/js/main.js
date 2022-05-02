@@ -82,7 +82,9 @@ var Dot = function() {
     this.node = (function() {
         var n = document.createElement("div");
         n.className = "trail";
+
         document.body.appendChild(n);
+
         return n;
     }());
 };
@@ -91,10 +93,13 @@ var Dot = function() {
 Dot.prototype.draw = function() {
     this.node.style.left = this.x + "px";
     this.node.style.top = this.y + "px";
+    this.node.style.transform = "translate(-50%, -50%)";
+    this.node.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+
 };
 
 // Creates the Dot objects, populates the dots array
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 100; i++) {
     var d = new Dot();
     dots.push(d);
 }
@@ -121,13 +126,14 @@ function draw() {
 
 addEventListener("mousemove", function(event) {
     //event.preventDefault();
-    mouse.x = event.pageX;
-    mouse.y = event.pageY;
+    mouse.x = event.pageX + 1;
+    mouse.y = event.pageY + 1;
 });
 
 // animate() calls draw() then recursively calls itself
 // everytime the screen repaints via requestAnimationFrame().
 function animate() {
+
     draw();
     requestAnimationFrame(animate);
 }

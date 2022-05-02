@@ -206,14 +206,15 @@ ul {
         width: 70%;
     }
     h5 {
+        transition: all 0.2s ease-in-out;
         font-size: 20px;
         color: $main;
         margin: 2rem 0;
         padding: 10px;
         border: 1.5px solid $main;
         &:hover {
-            transition: all 0.5 ease-in-out;
-            background-color: rgba($main, 0.5);
+            background-color: $main;
+            color: $bg1;
         }
     }
 }
@@ -316,6 +317,9 @@ h3 {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    h1 {
+        font-size: 1rem;
+    }
 }
 
 //skills
@@ -338,9 +342,10 @@ h3 {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     h5 {
+        transition: all 0.2s ease-in-out;
         font-size: 20px;
         color: $main;
         margin: 2rem 0;
@@ -350,8 +355,10 @@ h3 {
             color: $main;
         }
         &:hover {
-            transition: all 0.5 ease-in-out;
-            background-color: rgba($main, 0.5);
+            background-color: $main;
+            a {
+                color: $bg1;
+            }
         }
     }
 }
@@ -360,10 +367,14 @@ h3 {
 .trail {
     /* className for the trail elements */
     position: absolute;
-    height: 8px;
-    width: 8px;
-    border-radius: 40px;
+    // height: 8px;
+    // width: 8px;
+    // border-radius: 40px;
+    border-left: 2px solid $second;
+    height: 20px;
     background: $main;
+    opacity: 0.3;
+    z-index: -2;
 }
 
 //add media query for mobile
