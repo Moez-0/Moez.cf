@@ -6,7 +6,19 @@ function getRandomInt(min, max) {
 
 function complimentGenerator() {
     const her = document.getElementById("her");
-    const compliments = [
+    
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function complimentGenerator() {
+    const her = document.getElementById("her");
+
+    // Array of compliments
+const allCompliments= [
 "You give me sense of euphoria ",
 "I wanna wrap my arms around your back",
 	"Eye contact with you always feels like foreplay",
@@ -91,11 +103,35 @@ function complimentGenerator() {
         "Your authenticity and genuine nature make you a true gem."
     ];
 
-    const randomIndex = getRandomInt(0, compliments.length - 1);
-    const randomCompliment = compliments[randomIndex];
 
+    // Array to store used compliments
+    let usedCompliments = JSON.parse(localStorage.getItem('usedCompliments')) || [];
+
+    // Filter out used compliments
+    const availableCompliments = allCompliments.filter(compliment => !usedCompliments.includes(compliment));
+
+    // Check if there are compliments left to display
+    if (availableCompliments.length === 0) {
+        her.innerHTML = "<h1 id='her'>No more compliments left<h1>";
+        return;  // Exit the function if all compliments have been used
+    }
+
+    // Get a random index
+    const randomIndex = getRandomInt(0, availableCompliments.length - 1);
+
+    // Get the compliment at the random index
+    const randomCompliment = availableCompliments[randomIndex];
+
+    // Display the compliment
     her.innerHTML = "<h1 id='her'>" + randomCompliment + "<h1>";
+
+    // Add the used compliment to the array
+    usedCompliments.push(randomCompliment);
+
+    // Save used compliments to local storage
+    localStorage.setItem('usedCompliments', JSON.stringify(usedCompliments));
 }
 
 // Example usage:
 complimentGenerator();
+
