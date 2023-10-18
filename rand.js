@@ -32,7 +32,6 @@ function complimentGenerator() {
 "I'd never regret anythin with u",
         "I'm grateful for the joy you bring into my life.",
 "Thank u for getting me excited again",
-"Do you know how many times I’ve mentally stripped you",
         "Your strength, both mentally and emotionally, is commendable.",
 "I wanna wrap my arms around your back",
         "You have a way of making people feel seen and heard.",
@@ -78,11 +77,11 @@ function complimentGenerator() {
         "Your courage to be yourself is truly admirable.",
 "I love making you tense",
 "I want to eat you out ,",
-"Do you know how many times I’ve mentally stripped you",
+
         "Your sense of humor and wit make every moment more enjoyable.",
 "I love making you tense",
 
-"Do you know how many times I’ve mentally stripped you",
+
 
 "I want to eat you out ,",
         "Your sense of humor and wit make every moment more enjoyable.",
