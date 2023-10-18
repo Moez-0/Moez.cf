@@ -103,7 +103,7 @@ const allCompliments= [
 
     // Check if there are compliments left to display
     if (availableCompliments.length === 0) {
-        her.innerHTML = "<h1 id='her'>No more compliments left<h1>";
+        her.innerHTML = "<h1 id='her'>Wait for the next list for another day ;) <h1>";
         return;  // Exit the function if all compliments have been used
     }
 
