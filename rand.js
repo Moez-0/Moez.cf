@@ -135,3 +135,4 @@ const allCompliments= [
 // Example usage:
 complimentGenerator();
 
+}
