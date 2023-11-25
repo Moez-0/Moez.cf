@@ -99,7 +99,7 @@ Dot.prototype.draw = function() {
 };
 
 // Creates the Dot objects, populates the dots array
-for (var i = 0; i < 2400; i++) {
+for (var i = 0; i < 240; i++) {
     var d = new Dot();
     dots.push(d);
 }
