@@ -12,14 +12,13 @@ html {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 :root {
   transition: 1s ease-in-out;
   --second: white;
-  --main: #F712BD;
+  --main: #3500D3;
   --bg1: rgb(12, 11, 12);
   --link-clr: white;
   --ovcolor: white;
@@ -28,7 +27,7 @@ html {
 body.theme {
   transition: 1s ease;
   --second: rgb(12, 11, 12);
-  --main: #F712BD;
+  --main: #FC4445;
   --bg1: white;
   --link-clr: rgb(12, 11, 12);
   --ovcolor: rgb(12, 11, 12);
@@ -54,8 +53,7 @@ body {
 
 #vector {
   opacity: 0.5;
-  -webkit-animation: rotation 10s infinite linear;
-          animation: rotation 10s infinite linear;
+  animation: rotation 10s infinite linear;
 }
 
 a {
@@ -168,8 +166,7 @@ ul {
 .container h1 {
   position: absolute;
   right: 10px;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   font-family: "Ostrich Sans", sans-serif;
   font-size: 50px;
 }
@@ -450,14 +447,6 @@ h3 {
   }
   .about .content p {
     font-size: 15px;
-  }
-}
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(359deg);
   }
 }
 @keyframes rotation {
