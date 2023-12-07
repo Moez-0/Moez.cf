@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection de perte de connexion</title>
+</head>
+<body>
+
+    <script>
+        function handleConnectionChange() {
+            if (navigator.onLine) {
+                // La connexion est rétablie
+                console.log("Connexion rétablie");
+            } else {
+                // Perte de connexion
+                console.log("Connexion perdue");
+                // Redirigez l'utilisateur vers une page d'erreur
+                window.location.href = "404.html";
+            }
+        }
+
+        // Ajoutez un écouteur d'événements pour détecter les changements d'état de la connexion
+        window.addEventListener('online', handleConnectionChange);
+        window.addEventListener('offline', handleConnectionChange);
+
+        // Appelez la fonction une fois au chargement de la page pour vérifier l'état initial de la connexion
+        handleConnectionChange();
+    </script>
+
+</body>
+</html>
