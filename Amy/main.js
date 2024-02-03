@@ -15,3 +15,6 @@ function createHeart() {
   }
   
   setInterval(createHeart, 300);
+  window.onload = function() {
+    document.getElementById("my_audio").play();
+}
