@@ -17,6 +17,16 @@ function createHeart() {
   setInterval(createHeart, 300);
 
 
-window.onload = function() {
-    document.getElementById("my_audio").play();
-}
+document.addEventListener("DOMContentLoaded", function() {
+    var audio = document.getElementById("my_audio");
+    
+    // Function to play audio
+    function playAudio() {
+        audio.play();
+        // Remove the event listener after the first user interaction to avoid conflicts
+        document.removeEventListener("click", playAudio);
+    }
+
+    // Add click event listener to play audio on user interaction
+    document.addEventListener("click", playAudio);
+});
