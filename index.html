@@ -56,12 +56,19 @@
             </nav>
         </div>
         <div class="container" id="canvas">
-            <div class="content fade">
+            <div class="content  amy">
                 <h2>
-                    <span>Till I meet my baby</span>
-                    <p id="demo"></p>
 
+                    <span>Her</span>
+                    <p id="demo"></p>
+                    <a href="https://open.spotify.com/playlist/6Hp2JtGvHXVzL29VC2dMkq?si=78dc36e8ba784656https://open.spotify.com/playlist/6Hp2JtGvHXVzL29VC2dMkq?si=78dc36e8ba784656">CLICK FOR PLAYLIST</a>
                 </h2>
+                
+                <div class="playlist">
+
+
+
+                </div>
 
             </div>
             <div class="content fade">
@@ -201,8 +208,8 @@
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
           // Display the result in the element with id="demo"
-          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-          + minutes + "m " + seconds + "s ";
+          document.getElementById("demo").innerHTML = days + "days " + hours + "hours "
+          + minutes + "minutes " + seconds + "seconds ";
         
           // If the count down is finished, write some text
           if (distance < 0) {
@@ -211,6 +218,7 @@
           }
         }, 1000);
         </script>
+        <script src="/assets/js/spotifyApi.js"></script>
 </body>
 
 </html>

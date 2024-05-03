@@ -34,6 +34,7 @@ body.theme {
 }
 
 .container {
+  margin-top: 10%;
   padding: 0 10%;
   color: var(--second);
   width: 100%;
@@ -245,7 +246,54 @@ h3 {
   font-family: "Ostrich Sans", sans-serif;
 }
 
+#demo {
+  font-size: 70px;
+  margin: 20px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "Ostrich Sans", sans-serif;
+}
+
+.amy {
+  width: 50%;
+  height: 100%;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.playlist {
+  height: 200px; /* set a fixed height for the div */
+  overflow-y: scroll; /* enable vertical scrollbar */
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playlist .track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: marquee 50s linear infinite;
+}
+.playlist .track img {
+  width: 50px;
+  height: 50px;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5000%);
+  }
+}
+.playlist .track p {
+  font-size: 5px;
+}
+
 .about {
+  margin-top: 150px;
   position: relative;
   padding: 0 10%;
   color: var(--second);
@@ -344,7 +392,24 @@ h3 {
   z-index: -2;
 }
 
+.amy {
+  height: 500px;
+}
+.amy a {
+  color: var(--main);
+  font-size: 20px;
+}
+
 @media screen and (max-width: 768px) {
+  .amy {
+    margin-top: 500px;
+  }
+  .amy h2 {
+    font-size: 20px;
+  }
+  #demo {
+    font-size: 20px;
+  }
   .v1 {
     display: none;
   }
@@ -358,6 +423,7 @@ h3 {
     font-size: 30px;
   }
   .container .content {
+    height: 100%;
     width: 100%;
   }
   .container .content h2 {
@@ -428,6 +494,7 @@ h3 {
     left: 20px;
   }
   .about {
+    margin-top: 550px;
     padding: 0 60px;
   }
   .container {
