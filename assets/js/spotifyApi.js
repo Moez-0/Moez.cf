@@ -1,8 +1,22 @@
-var token = "BQD85Wchcm1_h2vzo0Jm0DAVUCH-goPRWyM5PWKIdB8CRDEXPpacksTw-cs8h0NS53CJ_9YN3ky6O6A36UdrgaGixm_SdUWzqfEMWx9PpIpiZn5Qgyk";
+var token = "";
+var client_id = "c1438bf8711a4e3ba322a76f6d0c6893";
+var client_secret = "701a935cc8aa47e69c8096fc2b80dd4e";
 
 
-// get playlist info from spotify
+fetch('https://accounts.spotify.com/api/token', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
 
+    },
+    body: 'grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + client_secret
+}).then(function(response) {
+    return response.json();
+}
+).then(function(data) {
+
+    token = data.access_token;
+    
 var url = "https://api.spotify.com/v1/playlists/6Hp2JtGvHXVzL29VC2dMkq";
 var playlist = document.querySelector('.playlist');
 var playlist_img = document.querySelector('.playlist_img');
@@ -15,9 +29,11 @@ fetch(url, {
         'Authorization': 'Bearer ' + token
     }
 }).then(function(response) {
+    console.log("token"+token);
     return response.json();
 }
 ).then(function(data) {
+
     console.log(data);
     // playlist_img.src = data.images[0].url;
     // playlist_name.innerHTML = data.name;
@@ -42,3 +58,16 @@ fetch(url, {
     console.log(error);
 }
 );
+
+
+}
+).catch(function(error) {
+    console.log(error);
+}
+);
+
+
+
+
+
+// get playlist info from spotify
