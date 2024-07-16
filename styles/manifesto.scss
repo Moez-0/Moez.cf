@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Imports
+@import url("https://fonts.cdnfonts.com/css/ostrich-sans-2");
+
+//Global
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000;
+    color: white;
+    font-family: 'Ostrich Sans';
+}
+
+.container {
+    width: 90%; /* Adjust container width for responsiveness */
+    margin: auto;
+    padding: 20px; /* Add padding to give content breathing room */
+    min-height: 100vh; /* Ensure container takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #e40b0b;
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    font-family: 'Ostrich Sans';
+}
+
+h1 {
+    color: #640505;
+    margin-top: 1rem;
+}
+
+.title {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust width for full width on small screens */
+    text-align: center; /* Center align text */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; /* Adjust width for full width on small screens */
+    text-align: justify; /* Justify text for better readability */
+}
+
+p {
+    margin: 10px 0; /* Adjust paragraph margin */
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+}
