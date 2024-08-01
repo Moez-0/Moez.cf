@@ -95,8 +95,7 @@ const getContact = () => {
   let renderData = `<div class="command-result"><dl>`;
   const contacts = [
     { contactTitle: "email", contactPlace: email },
-    { contactTitle: "github", contactPlace: "@BrijenMakwana" },
-    { contactTitle: "hashnode", contactPlace: "brijen.hashnode.dev" },
+    { contactTitle: "github", contactPlace: "@Moez-0" },
     { contactTitle: "instagram", contactPlace: "I am not dependent on the approval of others." },
     { contactTitle: "twitter", contactPlace: "No time to meddle in other people's lives" },
   ];
