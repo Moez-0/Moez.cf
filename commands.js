@@ -41,6 +41,7 @@ let aboutSectionHTML,
   helpSectionHTML,
   websiteSectionHTML,
   manifestoSectionHTML,
+  playlistSectionHTML,
   secretSectionHTML;
 
 const getAbout = () => {
@@ -119,6 +120,11 @@ const getHelp = () => {
     { command: "manifesto", description: "A personal statement to be seen" },
     { command: "secret", description: "Caesar is a title of imperial character. It derives from the cognomen of the Roman dictator Julius Caesar. The name of whom I love most is what uncovers the secrets of it all" },
     { command: "clear", description: "Clears the terminal of all output" },
+    { command: "destruct", description: "Initiate self-destruct sequence" },
+    // { command: "playlist", description: "A playlist dedicated to my lover" },
+    // { command: "art", description: "Get a random art picture" },
+    // { command: "kitty", description: "Just a kitty" },
+    // { command: "kafka", description: "Hopeless Romantic" }, 
     { command: "cmd/ctrl + k", description: "Keyboard shortcut to clear the terminal" },
   ];
   availableCommands.forEach((cmd) => {
@@ -142,6 +148,14 @@ const getManifesto = () => {
   return renderData;
 }
 
+const playlist = "https://open.spotify.com/playlist/6Hp2JtGvHXVzL29VC2dMkq?si=78dc36e8ba784656https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F6Hp2JtGvHXVzL29VC2dMkq%3Fsi%3D78dc36e8ba784656&nd=1&dlsi=350a3c27328344fc";
+
+const getPlaylist = () => {
+  const renderData = `<div class="command-result">Redirecting you to my playlist dedicated to my lover <a href="${playlist}" target="_blank" class="data-link">${playlist}</a> ...</div>`;
+  return renderData;
+}
+
+
 const getSecret = (password) => {
   const correctPassword = "htluf";
   if (password === correctPassword) {
@@ -154,7 +168,145 @@ const getSecret = (password) => {
 }
 
 
+const kafkaLoveLettersToMilena = [
+  {
+    date: '1920-01-07',
+    subject: 'To My Beloved Ameny',
+    content: `My dear Ameny,
 
+    You are the knife I turn inside myself; that is love. That, my dear, is love.
+
+    Yours,
+    A hopeless kafka like Romantic`
+  },
+  {
+    date: '1920-03-29',
+    subject: 'To Ameny',
+    content: `Dear Ameny,
+
+    How could I ever express the depth of my feelings for you? Your presence is like a guiding light in my life, and I cherish every moment we share.
+
+    With all my love,
+    Moe`
+  },
+  {
+    date: '1920-08-12',
+    subject: 'To My Dearest Ameny',
+    content: `Dearest Ameny,
+
+    The thought of you fills me with a deep, overwhelming happiness. Your words and your love are the foundation of my strength, and I am eternally grateful for you.
+
+    Always yours,
+    Moez`
+
+  },
+  {
+    date: '1920-11-01',
+    subject: 'To My Beloved Ameny',
+    content: `My dearest Ameny,
+    I’m tired, can’t think of anything and want only to lay my face in your lap, feel your hand on my head and remain like that through all eternity.
+
+    Yours,
+    Moez`
+
+  },
+  {
+    date: '1920-12-24',
+    subject: 'To My Dearest Ameny',
+    content: `My Dearest Kitty,
+
+   I want in fact more of you. In my mind I am dressing you with light; I am wrapping you up in blankets of complete acceptance and then I give myself to you. I long for you; I who usually long without longing, as though I am unconscious and absorbed in neutrality and apathy, really, utterly long for every bit of you.
+
+    Yours,
+    Moez`
+  }
+];
+
+const getRandomKafkaLetter = () => {
+  const randomIndex = Math.floor(Math.random() * kafkaLoveLettersToMilena.length);
+  const letter = kafkaLoveLettersToMilena[randomIndex];
+  const renderData = `<div class="command-result">
+    <h2>${letter.subject}</h2>
+    <p><strong>Date:</strong> ${letter.date}</p>
+    <p>${letter.content.replace(/\n\s*\n/g, '</p><p>')}</p>
+  </div>`;
+  return renderData;
+};
+
+const artPictures = [
+  { id: '1', title: 'Sketch of a Roaring Lion', image: 'https://www.leonardodavinci.net/assets/img/works/sketch-of-a-roaring-lion.jpg', description: 'Leonardo da Vinci' },
+  { id: '2', title: 'Embryo in the Womb', image: 'https://www.leonardodavinci.net/assets/img/works/embryo-in-the-womb.jpg', description: 'By Leonardo da Vinci' },
+  { id: '3', title: 'UNAMED', image: 'https://www.apollo-magazine.com/wp-content/uploads/2022/04/KAFKA-LEAD.jpg?w=900', description: 'Franz Kafka' },
+  { id: '4', title: 'Saturn Devouring His Son', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg/220px-Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg', description: 'Francisco Goya' },
+  { id: '5', title: 'The Nightmare', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Henry_Fuseli_%281741%E2%80%931825%29%2C_The_Nightmare%2C_1781.jpg/350px-Henry_Fuseli_%281741%E2%80%931825%29%2C_The_Nightmare%2C_1781.jpg', description: 'The Nightmare is a 1781 oil painting by Swiss artist Henry Fuseli' },
+  { id: '6', title: 'Stańczyk ( The Sad Clown Enigma )', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Jan_Matejko%2C_Sta%C5%84czyk.jpg/800px-Jan_Matejko%2C_Sta%C5%84czyk.jpg', description: 'Weirded' },
+
+];
+
+const getRandomArtPicture = () => {
+  const randomIndex = Math.floor(Math.random() * artPictures.length);
+  const art = artPictures[randomIndex];
+  const renderData = `<div class="command-result">
+    <h2>${art.title}</h2>
+    <p><strong>Description:</strong> ${art.description}</p>
+    <img src="${art.image}" alt="${art.title}" class="art-image">
+  </div>`;
+  return renderData;
+};
+
+const getKitty = () => {
+  let renderData = `<div class="command-result">`;
+  for (let i = 0; i < 1000; i++) {
+    renderData += `kitty `;
+  }
+  renderData += "</div>";
+  return renderData;
+};
+
+const getDestruct = () => {
+
+  const renderData = `
+    <div class="command-result">
+      <p>Initiating Self-Destruct Sequence...</p>
+      <p><span class="destruct-text">Wiping Disk...</span></p>
+      <p><span class="destruct-text">Clearing Data...</span></p>
+      <p><span class="destruct-text">Deleting All Files...</span></p>
+      <p><span class="destruct-text">Finalizing...</span></p>
+    </div>
+  `;
+  
+
+  document.body.style.transition = "opacity 7s ease-out";
+  document.body.style.opacity = "0";
+
+
+  setTimeout(() => {
+
+    window.location.reload();
+  }
+
+    , 7000);
+
+  return renderData;
+};
+const playlistVideos = [
+  'https://www.youtube.com/watch?v=yim50TwxT8w&t=1s&ab_channel=WordsOfWellbeing',  
+  'https://www.youtube.com/watch?v=rTFN8t9SXiQ&ab_channel=ChristopherGermer%2CPh.D.',
+  'https://www.youtube.com/watch?v=I2O7blSSzpI&t=103s&ab_channel=LEMMiNO',
+  'https://www.youtube.com/watch?v=bQtKSGlviWI&t=198s&ab_channel=ModernIdeas'
+];
+
+const getRandomVideo = () => {
+  const randomIndex = Math.floor(Math.random() * playlistVideos.length);
+  const videoUrl = playlistVideos[randomIndex];
+  const renderData = `
+    <div class="command-result">
+      <p>Playing a random video from the playlist...</p>
+      <iframe width="560" height="315" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  `;
+  return renderData;
+};
 aboutSectionHTML = getAbout();
 whoAmISectionHTML = getRoles();
 skillsSectionHTML = getSkills();
@@ -164,6 +316,9 @@ contactSectionHTML = getContact();
 helpSectionHTML = getHelp();
 websiteSectionHTML = getWebsite();
 manifestoSectionHTML = getManifesto();
+playlistSectionHTML = getPlaylist();
+
+
 
 export {
   aboutSectionHTML,
@@ -177,6 +332,12 @@ export {
   manifestoSectionHTML,
   website,
   websiteSectionHTML,
-
+  getRandomKafkaLetter,
   getSecret,
+  playlistSectionHTML,
+  playlist,
+  getRandomArtPicture,
+  getKitty,
+  getDestruct,
+  getRandomVideo,
 };

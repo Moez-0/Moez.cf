@@ -5,18 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moez.eu.org | Terminal </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preload" as="image" href="images/favicon.png">
     <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link href="./styless.css" rel="stylesheet" />
+
   </head>
   <body>
+    <audio id="background-music" src="music.mp3" loop="true" autoplay></audio>
+
     <div class="main-container">
+      <span class="material-symbols-outlined" id="settings">
+        settings
+        </span>
       <pre class="ascii-name">
 
         ___  ___                 _____             _     _ _ 
@@ -52,10 +59,13 @@
         <h4 class="message-text">
           Type <span class="help-text">'help'</span> to view a list of available
           commands.
+          Somme fun commands are a secret guess them yourself ( The TAB key might help ):)
         </h4>
       </div>
+      
       <div id="command-output">
-    
+        <ul id="suggestions" class="suggestions-list"></ul>
+
       </div>
       <div class="input-container">
         <label for="command" class="input-label"><pre>guest@moez.eu.org :~$</pre></label>
@@ -66,8 +76,39 @@
           class="input-command input-text"
           autofocus
         />
+
       </div>
+
     </div>
+
+        <div id="settings-modal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Settings</h2>
+            <div class="setting-option">
+              <label for="dark-mode-toggle">Light Mode:</label>
+              <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="setting-option">
+              <label for="language-select">Language:</label>
+              <select id="language-select">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="ar">Arabic</option>
+              </select>
+            </div>
+            <div class="setting-option">
+              <label for="mute-sound-toggle">Mute Sound:</label>
+              <label class="switch">
+                <input type="checkbox" id="mute-sound-toggle">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
     <script type="module" src="./app.js"></script>
   </body>
 </html>

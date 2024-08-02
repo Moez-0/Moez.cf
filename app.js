@@ -11,13 +11,46 @@ import {
   website,
   websiteSectionHTML,
   getSecret,
+  getRandomKafkaLetter,
+  playlistSectionHTML,
+  playlist,
+  getRandomArtPicture,
+  getKitty,
+  getDestruct,
+  getRandomVideo,
 } from "./commands.js";
 
 const command = document.getElementById("command");
 const commandOutput = document.getElementById("command-output");
+const settingsButton = document.getElementById("settings");
+const settingsModal = document.getElementById("settings-modal");
+const closeButton = document.querySelector(".close-button");
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const languageSelect = document.getElementById("language-select");
+
 
 const commandHistory = [];
 let historyIndex = 0;
+
+const commandsList = [
+  "help",
+  "whoami",
+  "about",
+  "skills",
+  "projects",
+  "achievements",
+  "website",
+  "contact",
+  "secret",
+  "manifesto",
+  "clear",
+  "kafka",
+  "playlist",
+  "art",
+  "kitty",
+  "destruct",
+  "interesting",
+];
 
 const focusOnCommandInput = () => {
   command.focus();
@@ -35,6 +68,10 @@ const upKeyIsPressed = (event) => {
 
 const clearKeyIsPressed = (event) => {
   return (event.metaKey || event.ctrlKey) && event.which == 75;
+};
+
+const tabKeyIsPressed = (event) => {
+  return event.which == 9;
 };
 
 const getPreviouslyExecutedCommand = () => {
@@ -140,6 +177,31 @@ const executeCommand = () => {
       emptyTerminal();
       addCommandToHistory();
       break;
+    case "kitty":
+        showCommandOutput(getKitty());
+        addCommandToHistory();
+        break;
+    case "kafka":
+      showCommandOutput(getRandomKafkaLetter());
+      addCommandToHistory();
+      break;
+    case "playlist":
+        showCommandOutput(playlistSectionHTML);
+        addCommandToHistory();
+        redirectToGUIWebsite(playlist);
+        break;
+    case "art":
+      showCommandOutput(getRandomArtPicture());
+      addCommandToHistory();
+      break;
+    case "destruct":
+      showCommandOutput(getDestruct());
+      addCommandToHistory();
+      break
+    case "interesting":
+      showCommandOutput(getRandomVideo());
+      addCommandToHistory();
+      break
     default:
       commandOutput.innerHTML += showCommandNotFound();
   }
@@ -170,6 +232,19 @@ const evaluateCommandInput = (event) => {
     resetHistoryIndex();
     emptyTerminal();
   }
+
+  if (tabKeyIsPressed(event)) {
+    event.preventDefault();
+    suggestCommand();
+  }
+};
+
+const suggestCommand = () => {
+  const currentInput = command.value.trim().toLowerCase();
+  const suggestedCommand = commandsList.find(cmd => cmd.startsWith(currentInput));
+  if (suggestedCommand) {
+    command.value = suggestedCommand;
+  }
 };
 
 command.addEventListener("keydown", evaluateCommandInput);
@@ -185,3 +260,38 @@ const resetHistoryIndex = () => {
 const emptyTerminal = () => {
   commandOutput.innerHTML = "";
 };
+
+
+
+
+const toggleSettingsModal = () => {
+  settingsModal.classList.toggle("show-modal");
+};
+
+const windowOnClick = (event) => {
+  if (event.target === settingsModal) {
+    toggleSettingsModal();
+  }
+};
+
+const toggleDarkMode = () => {
+  document.body.classList.toggle("dark-mode");
+};
+
+const changeLanguage = () => {
+  const selectedLanguage = languageSelect.value;
+
+};
+
+
+
+settingsButton.addEventListener("click", toggleSettingsModal);
+closeButton.addEventListener("click", toggleSettingsModal);
+window.addEventListener("click", windowOnClick);
+darkModeToggle.addEventListener("change", toggleDarkMode);
+languageSelect.addEventListener("change", changeLanguage);
+
+  document.getElementById('mute-sound-toggle').addEventListener('change', function() {
+    const audio = document.getElementById('background-music');
+    audio.muted = this.checked;
+  });
