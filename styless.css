@@ -347,6 +347,7 @@ body.dark-mode {
 
 
 .video{
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,7 +358,8 @@ body.dark-mode {
 
 .video iframe{
   width: 50%;
-  height: 50%;
+  height: 80%;
+  margin-top: 10px;
 }
 
 #time-counter{
