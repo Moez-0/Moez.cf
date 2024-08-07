@@ -180,6 +180,12 @@ body.dark-mode {
   background: #FC4445;
 }
 
+#time{
+  margin: 50px 0;
+  animation: blink 0.5s step-start infinite;
+}
+
+
 
 #settings {
   position: absolute;

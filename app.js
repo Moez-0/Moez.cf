@@ -20,6 +20,8 @@ import {
   getRandomVideo,
 } from "./commands.js";
 
+
+
 const command = document.getElementById("command");
 const commandOutput = document.getElementById("command-output");
 const settingsButton = document.getElementById("settings");
@@ -27,6 +29,14 @@ const settingsModal = document.getElementById("settings-modal");
 const closeButton = document.querySelector(".close-button");
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 const languageSelect = document.getElementById("language-select");
+const time = document.getElementById("time");
+
+const now = new Date();
+const currentDateTime = now.toLocaleString();
+
+time.innerHTML = currentDateTime;
+
+
 
 
 const commandHistory = [];
