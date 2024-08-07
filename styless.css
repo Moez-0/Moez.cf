@@ -130,6 +130,7 @@ body.dark-mode {
   color: #0afb1a;
   font-size: 18px;
   font-weight: 400;
+  animation: blink 0.5s step-start infinite;
 }
 
 @media only screen and (max-width: 600px) {
